@@ -8,14 +8,14 @@ public class Main {
         int bonus = 100;
 
         int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-        System.out.println("Your final score was "+ highScore);
+        System.out.println("Your final score was " + highScore);
 
         score = 10000;
         levelCompleted = 8;
         bonus = 200;
 
         highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-        System.out.println("Your final score was "+ highScore);
+        System.out.println("Your final score was " + highScore);
 
         // Challenge
         // Create a method called displayHighScorePosition
@@ -33,9 +33,8 @@ public class Main {
         // call both methods and display the results of the following
         // 1500, 900, 400, 50
 
-        int position = 0;
 
-        position = calculateHighScorePosition(1500);
+        int position = calculateHighScorePosition(1500);
         displayHighScorePosition("Lewis", position);
 
         position = calculateHighScorePosition(900);
@@ -62,19 +61,30 @@ public class Main {
 
     public static void displayHighScorePosition(String playerName, int position) {
 
-        System.out.println(playerName + " got into position "+ position + " on the high score table!");
+        System.out.println(playerName + " got into position " + position + " on the high score table!");
 
     }
 
     public static int calculateHighScorePosition(int playerScore) {
-        if(playerScore >= 1000){
-            return 1;
-        } else if(playerScore >= 500 && playerScore < 1000) {
-            return 2;
-        } else if(playerScore >= 100 && playerScore < 500) {
-            return 3;
-        } else {
-            return 4;
+//        if (playerScore >= 1000) {
+//            return 1;
+//        } else if (playerScore >= 500) {
+//            return 2;
+//        } else if (playerScore >= 100) {
+//            return 3;
+//        }
+//        return 4;
+
+        //Alt approach with single return
+        int position = 4;
+
+        if (playerScore >= 1000) {
+            position = 1;
+        } else if (playerScore >= 500) {
+            position = 2;
+        } else if (playerScore >= 100) {
+            position = 3;
         }
+        return position;
     }
 }
